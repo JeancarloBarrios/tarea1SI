@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tarea1</title>
+</head>
+<body>
+     {% if user.is_authenticated %}
+    <h1>Welcome {{ user.username }}!</h1>
+    {% else %}
+    <h1>Welcome to tarea 1</h1>
+    {% endif %}
+
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                <li>{{ category.name }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
+
+        <a href="/about/">About</a>
+</body>
+</html>
